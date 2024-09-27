@@ -1,0 +1,880 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lora', sans-serif;
+    background-color: #ffffff; /* Белый фон */
+    color: #333;
+}
+
+/* Сохраняем другие стили хедера */
+header {
+    background-color: #000000;
+    color: #ffffff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo img {
+    height: 60px;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header ul li {
+    display: inline;
+}
+
+header ul li a {
+    color: #f0e68c; /* Золотой текст */
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header ul li a:hover {
+    color: #ffffff; /* Белый текст при наведении */
+    text-decoration: underline;
+}
+
+/* Стили для бургер-меню */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.burger-menu span {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+}
+
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 768px) {
+    header ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: #000000;
+        padding: 20px;
+        align-items: center;
+    }
+
+    header ul.show {
+        display: flex;
+
+    }
+
+    .burger-menu {
+        display: flex;
+    }
+
+    /* Логотип для мобильных устройств */
+    .logo img {
+        height: 40px; /* Меньший логотип на мобильных устройствах */
+    }
+}
+
+
+
+section {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #fff;
+    border-radius: 20px; /* Более сильное закругление блоков */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Мягкая объемная тень */
+}
+
+section h1, section h2 {
+    color: #b49c94; /* Нежный цвет заголовков */
+}
+
+
+#home {
+    position: relative;
+    height: 70vh; /* Уменьшенная высота блока */
+    background: linear-gradient(135deg, #000000 50%, #ffffff 50%); /* Инь-янь стиль фона */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    padding: 20px;
+}
+
+#home h1 {
+    font-family: 'Great Vibes', cursive; /* Красивый каллиграфический шрифт */
+    font-size: 80px; /* Очень крупный размер текста */
+    color: #f0e68c; /* Золотой цвет текста */
+    text-shadow: 4px 4px 15px rgba(0, 0, 0, 1.0); /* Тень текста для выделения */
+    margin: 0 0 20px 0; /* Добавляем отступ снизу */
+}
+
+#home .btn {
+    font-size: 18px;
+    padding: 12px 25px;
+    background-color: #333333; /* Темный фон кнопки */
+    color: #f0e68c; /* Золотой текст */
+    text-decoration: none;
+    border-radius: 30px; /* Закругленные углы кнопки */
+    border: 1px solid #f0e68c; /* Золотая рамка */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Тень для объема */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#home .btn:hover {
+    background-color: #ffffff; /* Белый фон при наведении */
+    color: #333333; /* Темный текст */
+    transform: translateY(-5px); /* Легкий эффект поднятия кнопки */
+}
+
+@media (max-width: 768px) {
+    #home h1 {
+        font-size: 50px; /* Меньший размер текста на мобильных устройствах */
+    }
+
+    #home .btn {
+        font-size: 16px;
+        padding: 10px 20px; /* Чуть меньше кнопка на мобильных */
+    }
+}
+
+.btn {
+    background-color: #333333;
+    color: #f0e68c;
+    padding: 15px 30px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+    box-shadow: 0 0 20px rgba(240, 230, 140, 0.5); /* Золотое свечение */
+    transform: scale(1.05); /* Легкое увеличение при наведении */
+}
+
+
+.contact-btn {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(240, 230, 140, 0.5); /* Золотое свечение */
+}
+
+
+
+
+#about {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000; /* Чёрный фон */
+    overflow: hidden;
+}
+
+#about::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0));
+    animation: smoke 15s infinite ease-in-out;
+    z-index: -1;
+}
+
+@keyframes smoke {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.7;
+    }
+    25% {
+        transform: translate(10%, -10%) scale(1.5);
+        opacity: 0.4;
+    }
+    50% {
+        transform: translate(-10%, 10%) scale(2);
+        opacity: 0.6;
+    }
+    75% {
+        transform: translate(10%, 10%) scale(2.5);
+        opacity: 0.3;
+    }
+    100% {
+        transform: translate(-10%, -10%) scale(3);
+        opacity: 0.5;
+    }
+}
+
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+}
+
+.about-text {
+    z-index: 1;
+    text-align: center;
+    color: #ffffff;
+    max-width: 500px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.about-text h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: #f0e68c;
+}
+
+.about-text p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.about-text .btn {
+    font-size: 18px;
+    padding: 12px 25px;
+    background-color: #333333;
+    color: #f0e68c;
+    text-decoration: none;
+    border-radius: 30px;
+    border: 1px solid #f0e68c;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.about-text .btn:hover {
+    background-color: #ffffff;
+    color: #333333;
+    transform: translateY(-5px);
+}
+
+.about-image {
+    flex: 1;
+    max-width: 300px;
+    overflow: hidden;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    filter: grayscale(100%);
+    transition: filter 0.5s ease;
+}
+
+.about-image img:hover {
+    filter: grayscale(0);
+}
+
+
+
+
+
+
+#services {
+    padding: 50px;
+    background-color: #000000; /* Черный фон */
+    text-align: center;
+    color: #f0e68c; /* Золотой текст */
+    position: relative;
+}
+
+#services::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0));
+    animation: smoke 15s infinite ease-in-out;
+    z-index: -1;
+}
+
+#services h2 {
+    font-size: 50px;
+    margin-bottom: 50px;
+    color: #f0e68c; /* Золотой цвет заголовков */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    text-align: center;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Три карточки в ряд */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto; /* Центрируем контейнер */
+}
+
+.service-item {
+    background: linear-gradient(135deg, #000000 50%, #ffffff 50%);
+    color: #f0e68c; /* Золотой текст */
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(240, 230, 140, 0.8); /* Золотое свечение */
+}
+
+.service-item img {
+    width: 100%;
+    border-radius: 15px;
+    filter: grayscale(100%); /* Черно-белое изображение */
+    transition: filter 0.5s ease;
+}
+
+.service-item img:hover {
+    filter: grayscale(0); /* Становится цветным при наведении */
+}
+
+.service-item h3 {
+    font-size: 24px;
+    margin: 20px 0;
+    color: #f0e68c; /* Золотой цвет заголовков */
+}
+
+.service-item p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+/* Адаптивные стили */
+@media (max-width: 1024px) {
+    .services-container {
+        grid-template-columns: repeat(2, 1fr); /* Две карточки в ряд на планшетах */
+    }
+}
+
+@media (max-width: 768px) {
+    .services-container {
+        grid-template-columns: 1fr; /* Одна карточка в ряд на мобильных */
+    }
+}
+
+
+
+
+
+#bonuses {
+    padding: 50px;
+    background-color: #000000; /* Черный фон */
+    text-align: center;
+    color: #f0e68c; /* Золотой текст */
+    position: relative;
+}
+
+#bonuses::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0));
+    animation: smoke 15s infinite ease-in-out;
+    z-index: -1;
+}
+
+#bonuses h2 {
+    font-size: 50px;
+    margin-bottom: 30px;
+    color: #f0e68c; /* Золотой цвет заголовков */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+#bonuses p {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 40px;
+}
+
+.bonus-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bonus-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 25px;
+    font-size: 18px;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    background-color: #0088cc; /* Цвет Telegram */
+}
+
+.bonus-btn i {
+    margin-right: 10px;
+}
+
+.bonus-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(240, 230, 140, 0.8); /* Золотое свечение */
+    background-color: #0077b6;
+}
+
+.bonus-info {
+    margin-top: 20px;
+    max-width: 600px;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+
+
+
+
+/* Модальное окно */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Темный фон */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.modal img, .modal video {
+    display: block;
+    margin: 0 auto;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Скрываем видео, если отображается изображение */
+#modalImage {
+    display: none;
+}
+
+/* Скрываем изображение, если отображается видео */
+#modalVideo {
+    display: none;
+}
+
+#reviews {
+    padding: 50px;
+    background-color: #000000; /* Черный фон */
+    text-align: center;
+    color: #f0e68c; /* Золотой текст */
+    position: relative;
+}
+
+#reviews::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0));
+    animation: smoke 15s infinite ease-in-out;
+    z-index: -1;
+}
+
+#reviews h2 {
+    font-size: 50px;
+    margin-bottom: 50px;
+    color: #f0e68c; /* Золотой цвет заголовков */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    text-align: center;
+}
+
+.reviews-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Три отзыва в ряд */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto; /* Центрируем контейнер */
+}
+
+.review-item {
+    background-color: #333333; /* Темный фон карточек отзывов */
+    color: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.review-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(240, 230, 140, 0.8); /* Золотое свечение */
+}
+
+.review-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    filter: grayscale(100%); /* Черно-белое изображение */
+    transition: filter 0.5s ease;
+}
+
+.review-item img:hover {
+    filter: grayscale(0); /* Становится цветным при наведении */
+}
+
+.review-item p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Адаптивные стили */
+@media (max-width: 1024px) {
+    .reviews-container {
+        grid-template-columns: repeat(2, 1fr); /* Два отзыва в ряд на планшетах */
+    }
+}
+
+@media (max-width: 768px) {
+    .reviews-container {
+        grid-template-columns: 1fr; /* Один отзыв в ряд на мобильных */
+    }
+}
+
+
+
+
+
+
+#contacts {
+    padding: 50px;
+    background-color: #000000; /* Черный фон */
+    text-align: center;
+    color: #f0e68c; /* Золотой текст */
+    position: relative;
+}
+
+#contacts::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0));
+    animation: smoke 15s infinite ease-in-out;
+    z-index: -1;
+}
+
+#contacts h2 {
+    font-size: 50px;
+    margin-bottom: 30px;
+    color: #f0e68c; /* Золотой цвет заголовков */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+#contacts p {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 40px;
+}
+
+.contacts-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Три контакта в ряд */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto; /* Центрируем контейнер */
+}
+
+.contact-item {
+    text-align: center;
+}
+
+.contact-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 25px;
+    font-size: 18px;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.contact-btn i {
+    margin-right: 10px;
+}
+
+.contact-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(240, 230, 140, 0.8); /* Золотое свечение */
+}
+
+/* Стиль для каждой кнопки */
+.tg-btn {
+    background-color: #0088cc; /* Цвет Telegram */
+}
+
+.tg-btn:hover {
+    background-color: #0077b6;
+}
+
+.ig-btn {
+    background-color: #E1306C; /* Цвет Instagram */
+}
+
+.ig-btn:hover {
+    background-color: #c42c5e;
+}
+
+.viber-btn {
+    background-color: #7360f2; /* Цвет Viber */
+}
+
+.viber-btn:hover {
+    background-color: #5c4bd9;
+}
+
+.whatsapp-btn {
+    background-color: #25D366; /* Цвет WhatsApp */
+}
+
+.whatsapp-btn:hover {
+    background-color: #1ebe57;
+}
+
+.phone-number {
+    font-size: 20px;
+    color: #f0e68c;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    padding: 15px;
+}
+
+.phone-number:hover {
+    text-decoration: underline;
+}
+
+/* Адаптивные стили */
+@media (max-width: 1024px) {
+    .contacts-container {
+        grid-template-columns: repeat(2, 1fr); /* Два контакта в ряд на планшетах */
+    }
+}
+
+@media (max-width: 768px) {
+    .contacts-container {
+        grid-template-columns: 1fr; /* Один контакт в ряд на мобильных */
+    }
+}
+
+
+
+
+
+/* Логотип в блоках */
+.section-logo {
+    display: block;
+    margin: 20px auto;
+    height: 200px; /* Высота логотипа */
+    max-width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#gift-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    z-index: 1000;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 50%; /* Скругляем края */
+    box-shadow: 0 0 15px rgba(240, 230, 140, 0.5); /* Золотое свечение */
+    animation: pulse 2s infinite; /* Добавляем пульсацию */
+}
+
+#gift-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%; /* Скругляем изображение */
+    transition: transform 0.3s ease;
+}
+
+#gift-icon img:hover {
+    transform: scale(1.1); /* Легкое увеличение при наведении */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 15px rgba(240, 230, 140, 0.5);
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 25px rgba(240, 230, 140, 0.8);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 15px rgba(240, 230, 140, 0.5);
+    }
+}
+
+
+
+
+
+
+footer {
+    background-color: #000000; /* Черный фон */
+    color: #f0e68c; /* Золотой текст */
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+    border-top: 2px solid #f0e68c; /* Золотая линия вверху */
+}
+
+footer p {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+footer a {
+    color: #f0e68c; /* Цвет ссылок */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ffffff; /* Белый при наведении */
+}
+
+footer .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+footer .social-icons a {
+    color: #f0e68c;
+    font-size: 24px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer .social-icons a:hover {
+    color: #ffffff;
+    transform: translateY(-5px); /* Легкое поднятие иконок при наведении */
+}
+
+/* Добавляем золотое свечение для иконок */
+footer .social-icons a:hover::before {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: rgba(240, 230, 140, 0.5);
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    z-index: -1;
+}
+
+
+
+#footer-logo{
+     display: block;
+    margin: 20px auto;
+    height: 200px; /* Высота логотипа */
+    max-width: 100%;
+}
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+    footer {
+        padding: 20px;
+    }
+
+    footer p {
+        font-size: 14px;
+    }
+
+    footer .social-icons a {
+        font-size: 20px;
+    }
+}
